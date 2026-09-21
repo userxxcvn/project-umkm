@@ -4,17 +4,200 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bakery Lezat - UMKM Kuliner</title>
-    <link rel="stylesheet" href="style.css">
     
+    <!-- KODE CSS LANGSUNG DI DALAM HTML (DIJAMIN TIDAK POLOS) -->
+    <style>
+        /* Reset Dasar */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #fcf8f2;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Menu Navigasi */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            background-color: #8B4513; /* Warna Cokelat Kayu Manis */
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffe4c4;
+        }
+
+        /* Bagian Banner Utama (Hero) */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #ffe4c4; /* Warna Krem Lembut */
+            border-bottom: 5px solid #d2691e;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            color: #8B4513;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #5c2e0b;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #d2691e;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #8B4513;
+            transform: translateY(-2px);
+        }
+
+        /* Bagian Daftar Produk */
+        .produk-section {
+            padding: 60px 10%;
+            text-align: center;
+        }
+
+        .produk-section h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+            color: #8B4513;
+            position: relative;
+        }
+
+        .produk-section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #d2691e;
+            margin: 10px auto 0 auto;
+        }
+
+        .produk-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        /* Kartu Kotak Produk */
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+            width: 300px;
+            text-align: left;
+            border: 1px solid #f0e4d4;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card .placeholder-image {
+            width: 100%;
+            height: 200px;
+            background-color: #eadaaf;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #8B4513;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border: 2px dashed #8B4513;
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .card .harga {
+            color: #d2691e;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        /* Bagian Footer */
+        footer {
+            background-color: #333;
+            color: #ddd;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.95rem;
+            border-top: 4px solid #8B4513;
+        }
+
+        footer p {
+            margin-bottom: 8px;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- NAVIGASI -->
     <header>
-        <div class="logo">Bakery<span>Lezat</span></div>
         <nav>
+            <div class="logo">BakeryLezat</div>
             <ul>
-                <li><a href="#home">Beranda</a></li>
+                <li><a href="#beranda">Beranda</a></li>
                 <li><a href="#produk">Produk</a></li>
                 <li><a href="#tentang">Tentang Kami</a></li>
                 <li><a href="#kontak">Kontak</a></li>
@@ -22,52 +205,37 @@
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h1>Roti Segar Setiap Hari</h1>
-            <p>Dibuat dengan bahan premium dan penuh cinta untuk keluarga Anda.</p>
-            <a href="https://wa.me" class="btn" target="_blank">Pesan Sekarang</a>
-        </div>
+    <section id="beranda" class="hero">
+        <h1>Roti Segar Setiap Hari</h1>
+        <p>Dibuat dengan bahan premium dan penuh cinta untuk keluarga Anda.</p>
+        <a href="https://wa.me" target="_blank" class="btn">Pesan Sekarang via WhatsApp</a>
     </section>
 
-    <!-- PRODUK SECTION -->
     <section id="produk" class="produk-section">
-        <h2>Produk Unggulan</h2>
-        <div class="produk-grid">
-            <div class="produk-card">
-                <img src="https://unsplash.com" alt="Roti Tawar">
+        <h2>Produk Utama Kami</h2>
+        <div class="produk-container">
+            
+            <div class="card">
+                <!-- Kotak visual pengganti gambar agar tidak terlihat rusak jika file fotomu belum diupload -->
+                <div class="placeholder-image">🍞 Roti Tawar</div>
                 <h3>Roti Tawar Gandum</h3>
                 <p class="harga">Rp 15.000</p>
-                <p>Roti gandum sehat, lembut, dan kaya serat.</p>
+                <p>Roti gandum sehat, lembut, berserat tinggi, dan sangat mengenyangkan.</p>
             </div>
-            <div class="produk-card">
-                <img src="https://unsplash.com" alt="Croissant">
+
+            <div class="card">
+                <div class="placeholder-image">🥐 Croissant</div>
                 <h3>Croissant Cokelat</h3>
                 <p class="harga">Rp 12.000</p>
-                <p>Pastry renyah dengan isian cokelat lumer.</p>
+                <p>Pastry renyah berlapis khas Prancis dengan isian pasta cokelat Belgia yang lumer.</p>
             </div>
-            <div class="produk-card">
-                <img src="https://unsplash.com" alt="Kue Ulang Tahun">
-                <h3>Kue Tart Custom</h3>
-                <p class="harga">Rp 150.000</p>
-                <p>Kue ulang tahun custom sesuai request Anda.</p>
-            </div>
+
         </div>
     </section>
 
-    <!-- TENTANG KAMI -->
-    <section id="tentang" class="tentang-section">
-        <div class="tentang-konten">
-            <h2>Tentang Bakery Lezat</h2>
-            <p>Kami adalah UMKM rumahan yang berdiri sejak tahun 2020. Fokus kami adalah menyajikan roti dan kue berkualitas tinggi tanpa bahan pengawet demi kesehatan pelanggan kami.</p>
-        </div>
-    </section>
-
-    <!-- FOOTER & KONTAK -->
-    <footer id="kontak">
+    <footer>
         <p>&copy; 2026 Bakery Lezat. Semua Hak Dilindungi.</p>
-        <p>Hubungi Kami: <strong>0812-3456-789</strong> | Alamat: Jl. Mawar No. 12, Jakarta</p>
+        <p>Hubungi Kami: 0812-3456-789 | Alamat: Jl. Mawar No. 12, Jakarta</p>
     </footer>
 
 </body>
